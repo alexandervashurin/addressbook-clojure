@@ -37,14 +37,16 @@
 (defn update-contact!
   "Обновляет контакт по ID. nil-значения игнорируются (поле не изменяется)"
   [id {:keys [first-name last-name phone email address]}]
-  (let [updates (remove #(nil? (val %))
-                        {:first_name first-name
-                         :last_name last-name
-                         :phone phone
-                         :email email
-                         :address address})]
+  (let [updates (into {}
+                      (remove #(nil? (val %))
+                              {:first_name first-name
+                               :last_name last-name
+                               :phone phone
+                               :email email
+                               :address address}))]
     (when (seq updates)
-      (apply jdbc/update! db/db-spec :contacts updates ["id = ?" id]))))
+      ;; ВАЖНО: без apply! jdbc/update! принимает мапу напрямую
+      (jdbc/update! db/db-spec :contacts updates ["id = ?" id]))))
 
 (defn delete-contact!
   "Удаляет контакт по ID"
