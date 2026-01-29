@@ -22,13 +22,14 @@
 - Clojure 1.11.1 (устанавливается автоматически через Leiningen)
 
 Проверка установки:
-```bash
+```
 java -version    # Должно быть 17+
-lein -v          # Должно быть 2.10+ ```
+lein -v          # Должно быть 2.10+
+```
 
 ## 🚀 Установка и запуск
 
-```bash
+```
 git clone git@github.com:alexandervashurin/addressbook-clojure.git
 cd addressbook-clojure
 lein deps
@@ -36,7 +37,7 @@ lein run
 ```
 Если нужен просто JAR-файл:
 
-```bash
+```
 lein uberjar
 java -jar target/uberjar/addressbook-clojure-0.1.0-SNAPSHOT-standalone.jar
 ```
