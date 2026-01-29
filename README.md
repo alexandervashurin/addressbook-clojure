@@ -1,44 +1,43 @@
-# addressbook-clojure
+# 📱 Адресная книга на Clojure + SQLite
 
-FIXME: description
+Простое консольное приложение для управления контактами: добавление, редактирование, удаление и поиск записей с хранением данных в локальной SQLite базе.
 
-## Installation
+![Clojure](https://img.shields.io/badge/Clojure-1.11.1-5881d8?logo=clojure&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-3.44-003b57?logo=sqlite&logoColor=white)
+![License](https://img.shields.io/badge/License-EPL_2.0-blue)
 
-Download from http://example.com/FIXME.
+## ✨ Возможности
 
-## Usage
+- ✅ Добавление контактов (фамилия, имя, телефон, email, адрес)
+- ✅ Редактирование существующих записей
+- ✅ Удаление контактов с подтверждением
+- ✅ Поиск по фамилии или имени (частичное совпадение)
+- ✅ Хранение данных в локальной SQLite базе (`addressbook.db`)
+- ✅ Валидация обязательных полей (фамилия, имя, телефон)
 
-FIXME: explanation
+## 🛠 Требования
 
-    $ java -jar addressbook-clojure-0.1.0-standalone.jar [args]
+- [JDK 17+](https://adoptium.net/)
+- [Leiningen 2.10+](https://leiningen.org/)
+- Clojure 1.11.1 (устанавливается автоматически через Leiningen)
 
-## Options
+Проверка установки:
+```bash
+java -version    # Должно быть 17+
+lein -v          # Должно быть 2.10+ ```
 
-FIXME: listing of options this app accepts.
+## 🚀 Установка и запуск
 
-## Examples
+```bash
+git clone git@github.com:alexandervashurin/addressbook-clojure.git
+cd addressbook-clojure
+lein deps
+lein run
+```
+Если нужен просто JAR-файл:
 
-...
+```bash
+lein uberjar
+java -jar target/uberjar/addressbook-clojure-0.1.0-SNAPSHOT-standalone.jar
+```
 
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2026 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
